@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML><HEAD><TITLE>yav - Javascript form validation tool</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META name="Author" content="f.crivellaro" />
+<META name="Keywords" content="javascript, form, forms, validation, validator, form validation, form validator, javascript validation, web design" />
+<META name="Description" content="yav is a SIMPLE, POWERFUL and CUSTOMIZABLE javascript-based form validation tool" />
+<META content="MSHTML 6.00.2600.0" name=GENERATOR>
+<LINK href="../styles/yav-style.css" type=text/css rel=stylesheet>
+<SCRIPT>
+var divs=new Array('div_alnumhyphen','div_alnumhyphenat','div_alphabetic','div_alphanumeric','div_alphaspace','div_and','div_custom','div_date','div_date_le','div_date_lt','div_double','div_email','div_empty','div_equal','div_implies','div_integer','div_keypress','div_mask','div_maxlength','div_minlength','div_notequal','div_numeric','div_numrange','div_or','div_post-condition','div_pre-condition','div_regexp','div_required');
+function show(div) {
+    hideAll();
+    document.getElementById(div).style.display = 'block';
+}
+function hideAll() {
+    for (var i=0; i<divs.length; i++) {
+        document.getElementById(divs[i]).style.display = 'none';
+    }
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<TABLE id=layout style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+
+<!-- HEADER -->
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px" 
+    colSpan=3>
+      <TABLE id=banner 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px" 
+      width="100%">
+        <TBODY>
+        <TR>
+          <TD vAlign=center align=left width=90><img src="../img/yav-logo.gif" width="80" height="50" alt="Yav Logo" border="0"></TD>
+          <TD><FONT size=5>yav - javascript validation tool</FONT></TD>
+          <TD 
+          style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px" 
+          vAlign=center align=right>
+          <a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=133036&amp;type=2" width="125" height="37" border="0" alt="SourceForge.net Logo" /></a>
+        </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+
+<!-- TOP BAR -->
+    <TD id=bar colSpan=3>
+      <TABLE 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px" 
+      width="100%">
+        <TBODY>
+        <TR>
+          <TD align=left>
+          <a href="../en/index.html"><img src="../img/flag.en.png" width="20" height="14" border="0" alt="english" /></a>
+          <a href="../it/index.html"><img src="../img/flag.it.png" width="20" height="14" border="0" alt="italiano" /></a>
+          &nbsp;&nbsp;<A href="index.html">Home</A> </TD>
+          <TD align=right><SPAN id=Content> 
+            <A href="download.html">Download</A></SPAN> | <a href="http://groups.google.com/group/yav-en/">Support</a> 
+        </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+
+<!-- LEFT COLUMN -->
+    <TD id=leftColumn style="PADDING-TOP: 0px" vAlign=top><SPAN id=Content>
+      <br>
+      
+        <table class="htmlBox" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+        <th class="L"><br></th>
+        <th class="C">Documentazione</th>
+        <th class="R"><br></th>
+        </tr>
+        <tr>
+            <td colspan="3" class="B"><ul class="htmlBoxUl">
+            <li><A title="Come iniziare" href="gettingstarted.html">Come iniziare</A></li>
+            <li><A title="Regole di validazione" href="validationrules.html">Regole di validazione</A></li>
+            <li><A title="Supporto multi-lingue" href="languages.html">Supporto multi-lingue</A></li></ul></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <table class="htmlBox" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+        <th class="L"><br></th>
+        <th class="C">Impara per esempi</th>
+        <th class="R"><br></th>
+        </tr>
+        <tr>
+            <td colspan="3" class="B"><ul class="htmlBoxUl">
+            <li><A title="Simple registration form" href="example_1.html">Form di registrazione</A></li>
+            <li><A title="Notification of changes" href="example_2.html">Notifica cambiamenti</A></li>
+            <li><A title="Newsletter Sign-up" href="example_3.html">Iscrizione newsletter</A></li>
+            <li><A title="Captcha" href="example_4.php">Captcha</A></li>
+            <li><A title="The andor-operator" href="example_5.html">Operatori and/or</A></li>
+            <li><A title="Pre/Post/Implies rules" href="example_6.html">Regole Pre/Post/Implies</A></li>
+            <li><A title="Working with the masks" href="example_7.html">Le maschere</A></li></ul></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <table class="htmlBox" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+        <th class="L"><br></th>
+        <th class="C">Supporto</th>
+        <th class="R"><br></th>
+        </tr>
+        <tr>
+            <td colspan="3" class="B"><ul class="htmlBoxUl">
+            <li><A title="Gruppo discussioni" href="http://groups.google.com/group/yav-en/">Gruppo discussioni</A></li>
+            <li><A title="Mailing list" href="mailto:f.crivellaro@gmail.com?subject=[Yav]subscribe_mailing_list">Mailing list</A></li>
+            <li><A title="Contatto e-mail" href="mailto:f.crivellaro@gmail.com?subject=[Yav]contact">Contatto e-mail</A></li></ul></td>
+        </tr>
+        </tbody>
+        </table>
+
+    </TD>
+
+<!-- RIGHT COLUMN -->
+    <TD id=rightColumn vAlign=top>
+      <DIV>
+      <DIV id=Content>
+      <H1 class=heading1>Regole di validazione</H1>
+      <P class=paragraph>
+      <B>Yav</B> attualmente implementa queste regole di validazione
+      (codifica: <SPAN class=syntaxreq><B>identificatore regola</B></SPAN>, <SPAN class=syntaxreq>obbligatorio</SPAN> e <SPAN class=syntaxopt>opzionale</SPAN>).
+      </P>
+      <P>
+        <TABLE width=100%>
+          <TR>
+          <TD valign=top width=30%>
+              <A title="alnumhyphen" href="#" onclick="show('div_alnumhyphen');" >alnumhyphen</A><BR>
+              <A title="alnumhyphenat" href="#" onclick="show('div_alnumhyphenat');" >alnumhyphenat</A><BR>
+              <A title="alphabetic" href="#" onclick="show('div_alphabetic');" >alphabetic</A><BR>
+              <A title="alphanumeric" href="#" onclick="show('div_alphanumeric');" >alphanumeric</A><BR>
+              <A title="alphaspace" href="#" onclick="show('div_alphaspace');" >alphaspace</A><BR>
+              <A title="and" href="#" onclick="show('div_and');" >and</A><BR>
+              <A title="custom" href="#" onclick="show('div_custom');" >custom</A><BR>
+              <A title="date" href="#" onclick="show('div_date');" >date</A><BR>
+              <A title="date_le" href="#" onclick="show('div_date_le');" >date_le</A><BR>
+              <A title="date_lt" href="#" onclick="show('div_date_lt');" >date_lt</A><BR>
+              <A title="double" href="#" onclick="show('div_double');" >double</A><BR>
+              <A title="email" href="#" onclick="show('div_email');" >email</A><BR>
+              <A title="empty" href="#" onclick="show('div_empty');" >empty</A><BR>
+              <A title="equal" href="#" onclick="show('div_equal');" >equal</A><BR>
+          </TD>
+          <TD valign=top>
+              <A title="implies" href="#" onclick="show('div_implies');" >implies</A><BR>
+              <A title="integer" href="#" onclick="show('div_integer');" >integer</A><BR>
+              <A title="keypress" href="#" onclick="show('div_keypress');" >keypress</A><BR>
+              <A title="mask" href="#" onclick="show('div_mask');" >mask</A><BR>
+              <A title="maxlength" href="#" onclick="show('div_maxlength');" >maxlength</A><BR>
+              <A title="minlength" href="#" onclick="show('div_minlength');" >minlength</A><BR>
+              <A title="notequal" href="#" onclick="show('div_notequal');" >notequal</A><BR>
+              <A title="numeric" href="#" onclick="show('div_numeric');" >numeric</A><BR>
+              <A title="numrange" href="#" onclick="show('div_numrange');" >numrange</A><BR>
+              <A title="or" href="#" onclick="show('div_or');" >or</A><BR>
+              <A title="post-condition" href="#" onclick="show('div_post-condition');" >post-condition</A><BR>
+              <A title="pre-condition" href="#" onclick="show('div_pre-condition');" >pre-condition</A><BR>
+              <A title="regexp" href="#" onclick="show('div_regexp');" >regexp</A><BR>
+              <A title="required" href="#" onclick="show('div_required');" >required</A><BR>
+          </TD>
+          </TR>
+        </TABLE>
+      </P>
+      <DIV id=div_alnumhyphen style="display: none" >
+      <P class=paragraph>
+  <H4>alnumhyphen</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>alnumhyphen</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve contenere soltanto i caratteri a-z, A-Z, 0-9 o -_ .<BR>
+        <EM>msg default: </EM>ALNUMHYPHEN_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_alnumhyphenat style="display: none" >
+      <P class=paragraph>
+  <H4>alnumhyphenat</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>alnumhyphenat</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve contenere soltanto i caratteri a-z, A-Z, 0-9 or -_@ .<BR>
+        <EM>msg default: </EM>ALNUMHYPHENAT_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_alphabetic style="display: none" >
+      <P class=paragraph>
+  <H4>alphabetic</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>alphabetic</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve contenere soltanto i caratteri a-z o A-Z .<BR>
+        <EM>msg default: </EM>ALPHABETIC_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_alphanumeric style="display: none" >
+      <P class=paragraph>
+  <H4>alphanumeric</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>alphanumeric</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve contenere soltanto i caratteri a-z, A-Z o 0-9 .<BR>
+        <EM>msg default: </EM>ALPHANUMERIC_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_alphaspace style="display: none" >
+      <P class=paragraph>
+  <H4>alphaspace</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>alphaspace</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve contenere soltanto i caratteri a-z, A-Z, 0-9, -_ or Space .<BR>
+        <EM>msg default: </EM>ALPHASPACE_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_and style="display: none" >
+      <P class=paragraph>
+  <H4>and</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>indice della prima regola|<B>and</B>|indici delle altre regole (separatore: -)|msg</SPAN><BR>
+        <EM>descrizione: </EM>definisce l'operatore AND tra due o pi&ugrave; regole. Ciascuna regola &egrave; identificata dall'indice nel tuo array di regole.<BR>
+        <EM>note (a partire da yav 1.4.0):</EM>
+        Ciascuna regola utilizzata come operando deve essere marcata come 'andor-operator' (la vecchia sintassi con la pre-condizione funziona ancora ma &egrave; deprecata). E' possibile utilizzare '<EM>and</EM>' stessa come 'andor-operator'.<BR>
+        <EM>esempio: </EM>1|and|2-3|(1 and 2 and 3) non validato.<BR>
+      </P>
+      </DIV>
+      <DIV id=div_custom style="display: none" >
+      <P class=paragraph>
+  <H4>custom</H4>
+        <EM>syntax: </EM><SPAN class=syntaxreq>fieldName|<b>custom</b>|functionName()</SPAN> &nbsp;&nbsp;&nbsp;&nbsp;[la vecchia sintassi: </EM><SPAN class=syntaxreq>functionName()|<B>custom</B> </SPAN> funziona ancora]<BR>
+        <EM>descrizione: </EM>Esegue la validazione secondo una regola personalizzata.<BR>
+        <EM>note:</EM><BR>
+        Puoi creare le tue proprie regole di validazione. Ecco i passi da seguire:
+        <ul>
+        <li>crea una funzione js che restituisce null se la validazione ha successo, o un messaggio di errore se fallisce;</li>
+        <li>crea la tua regola con la sintassi sopra descritta.</li>
+        </ul>
+        La tua funzione js pu&ograve; usare dei parametri in input.<BR>
+        <EM>esempio: </EM>miaFunzione(mieiParametri)|custom<BR>
+      </P>
+      </DIV>
+      <DIV id=div_date style="display: none" >
+      <P class=paragraph>
+  <H4>date</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>date</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere una data valida.<BR>
+        <EM>msg default: </EM>DATE_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note: </EM>Puoi cambiare il valore della variabile DATE_FORMAT nel file yav-config.js per impostare un diverso formato di data(attualmente sono permessi i seguenti marcatori: dd=giorno, MM=mese, yyyy=anno).<BR>
+      </P>
+      </DIV>
+      <DIV id=div_date_le style="display: none" >
+      <P class=paragraph>
+  <H4>date_le</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>date_le</B>|dateValue</SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere non successiva a &lt;dateValue&gt;.<BR>
+        <EM>msg default: </EM>DATE_LE_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note: </EM>Puoi utilizzare meta-valori (usando il prefisso $) per indicare un altro campo input nel tuo form html. Opzionalmente, si pu&ograve; specificare un nome di visualizzazione diverso usando la sintassi $fieldName:nameDisplayed.<BR>
+        Puoi cambiare il valore della variabile DATE_FORMAT nel file yav-config.js per impostare un diverso formato di data(attualmente sono permessi i seguenti marcatori: dd=giorno, MM=mese, yyyy=anno).<BR>
+        <EM>esempi: </EM>primaData:Prima data|date_le|01-01-2000&nbsp;&nbsp;,&nbsp;&nbsp;primaData|date_le|$secondaData:Seconda data<BR>
+      </P>
+      </DIV>
+      <DIV id=div_date_lt style="display: none" >
+      <P class=paragraph>
+  <H4>date_lt</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>date_lt</B>|dateValue</SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere precedente a &lt;dateValue&gt;.<BR>
+        <EM>msg default: </EM>DATE_LT_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note: </EM>Puoi utilizzare meta-valori (usando il prefisso $) per indicare un altro campo input nel tuo form html. Opzionalmente, si pu&ograve; specificare un nome di visualizzazione diverso usando la sintassi $fieldName:nameDisplayed.<BR>
+        Puoi cambiare il valore della variabile DATE_FORMAT nel file yav-config.js per impostare un diverso formato di data(attualmente sono permessi i seguenti marcatori: dd=giorno, MM=mese, yyyy=anno).<BR>
+        <EM>esempi: </EM>primaData:Prima data|date_lt|01-01-2000&nbsp;&nbsp;,&nbsp;&nbsp;primaData|date_le|$secondaData:Seconda data<BR>
+      </P>
+      </DIV>
+      <DIV id=div_double style="display: none" >
+      <P class=paragraph>
+  <H4>double</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>double</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere un numero decimale (opzionalmente preceduto da +-).<BR>
+        <EM>msg default: </EM>DOUBLE_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note: </EM>Puoi cambiare il valore della variabile DECIMAL_SEP nel file yav-config.js per impostare un diverso separatore decimale.<BR>
+      </P>
+      </DIV>
+      <DIV id=div_email style="display: none" >
+      <P class=paragraph>
+  <H4>email</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>email</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere una e-mail valida, oppure vuoto.<BR>
+        <EM>msg default: </EM>EMAIL_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_empty style="display: none" >
+      <P class=paragraph>
+  <H4>empty</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>empty</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere vuoto.<BR>
+        <EM>msg default: </EM>EMPTY_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_equal style="display: none" >
+      <P class=paragraph>
+  <H4>equal</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>equal</B>|textValue</SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere uguale a &lt;textValue&gt;.<BR>
+        <EM>msg default: </EM>EQUAL_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea, checkbox, select, radio<BR>
+        <EM>note: </EM>Puoi utilizzare meta-valori (usando il prefisso $) per indicare un altro campo input nel tuo form html. Opzionalmente, si pu&ograve; specificare un nome di visualizzazione diverso usando la sintassi $fieldName:nameDisplayed.<BR>
+      </P>
+      </DIV>
+      <DIV id=div_implies style="display: none" >
+      <P class=paragraph>
+  <H4>implies</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>indice della pre-condizione|<B>implies</B>|indice della post-condizione|msg</SPAN><BR>
+        <EM>descrizione: </EM>Definisce una dipendenza tra due regole. Ciascuna regola &egrave; identificata dall'indice nel tuo array di regole.<BR>
+        <EM>note:</EM><BR>
+        Questa regola ha il seguente comportamento:
+        <ul>
+        <li>se la pre-condizione fallisce, ha successo;</li>
+        <li>se la pre-condizione ha successo, viene valutata la post-condizione.</li>
+        </ul>
+        Puoi creare la tua regola "implies" seguendo questi passi:
+        <ul>
+        <li>definisci una <A title="pre-condition" href="#" onclick="show('div_pre-condition');" >pre-condizione</A>;</li>
+        <li>definisci una <A title="post-condition" href="#" onclick="show('div_post-condition');" >post-condizione</A>;</li>
+        <li>definisci la tua regola "implies" specificando gli indici corretti per pre e post-condizione.</li>
+        </ul>
+        Vedere <A title="Impara per esempi" href="learnbyexample.html">Impara per esempi</A> per un esempio completo.<BR>
+      </P>
+      </DIV>
+      <DIV id=div_integer style="display: none" >
+      <P class=paragraph>
+  <H4>integer</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>integer</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere un numero intero (opzionalmente preceduto da +-).<BR>
+        <EM>msg default: </EM>INTEGER_MSG nel file yav-config.js <BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_keypress style="display: none" >
+      <P class=paragraph>
+  <H4>keypress</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>keypress</B>|caratteri ammessi</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; pu&ograve; contenere solo i caratteri ammessi, gli altri non sono digitabili.<BR>
+        <EM>msg default: </EM>none<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note: </EM><BR>
+        aggiungi la chiamata alla funzione checkKeyPress(event, this, rules) all'evento onkeypress sul tuo campo input del form;<BR>
+        il parametro &lt;rules&gt; &egrave; l'array con le tue regole.<BR>
+        Vedere <A title="Impara per esempi" href="learnbyexample.html">Impara per esempi</A> per un esempio completo.<BR><BR>
+        Questa regola funziona con Internet Explorer, Netscape e Firefox.
+      </P>
+      </DIV>
+      <DIV id=div_mask style="display: none" >
+      <P class=paragraph>
+  <H4>mask</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName|<b>mask</b>|maskName</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; rispetta la maschera &lt;maskName&gt;.<BR>
+        <EM>msg default: </EM>non applicabile<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><br>
+        Maschere pre-definite in yav: <em>alphabetic, alphanumeric, alnumhyphen, alnumhyphenat, alphaspace</em>.<br>
+        Puoi definire le tue maschere utilizzando la funzione <em>yav.addMask()</em>.<br>
+        Vedi l'esempio <a href="example_7.html">Le maschere</a> per maggiori dettagli.<BR>
+      </P>
+      </DIV>
+      <DIV id=div_maxlength style="display: none" >
+      <P class=paragraph>
+  <H4>maxlength</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>maxlength</B>|intValue</SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve avere lunghezza non maggiore di &lt;intValue&gt;.<BR>
+        <EM>msg default: </EM>MAXLENGTH_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_minlength style="display: none" >
+      <P class=paragraph>
+  <H4>minlength</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>minlength</B>|intValue</SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve avere lunghezza non minore di &lt;intValue&gt;.<BR>
+        <EM>msg default: </EM>MINLENGTH_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+
+      <DIV id=div_notequal style="display: none" >
+      <P class=paragraph>
+  <H4>notequal</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>notequal</B>|textValue</SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere diverso da &lt;textValue&gt;.<BR>
+        <EM>msg default: </EM>NOTEQUAL_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea, checkbox, select, radio<BR>
+        <EM>note: </EM>Puoi utilizzare meta-valori (usando il prefisso $) per indicare un altro campo input nel tuo form html. Opzionalmente, si pu&ograve; specificare un nome di visualizzazione diverso usando la sintassi $fieldName:nameDisplayed.<BR>
+      </P>
+      </DIV>
+
+      <DIV id=div_numeric style="display: none" >
+      <P class=paragraph>
+  <H4>numeric</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>numeric</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve contenere solo cifre.<BR>
+        <EM>msg default: </EM>NUMERIC_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_numrange style="display: none" >
+      <P class=paragraph>
+  <H4>numrange</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>numrange</B>|min-max</SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve essere un numero nell'intervallo min-max.<BR>
+        <EM>msg default: </EM>NUMRANGE_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+      <DIV id=div_or style="display: none" >
+      <P class=paragraph>
+  <H4>or</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>indice della prima regola|<B>or</B>|indici delle altre regole (separatore: -)|msg</SPAN><BR>
+        <EM>descrizione: </EM>definisce l'operatore OR tra due o pi&ugrave; regole. Ciascuna regola &egrave; identificata dall'indice nel tuo array di regole.<BR>
+        <EM>note (a partire da yav 1.4.0):</EM>
+        Ciascuna regola utilizzata come operando deve essere marcata come 'andor-operator' (la vecchia sintassi con la pre-condizione funziona ancora ma &egrave; deprecata). E' possibile utilizzare '<EM>or</EM>' stessa come 'andor-operator'.<BR>
+        <EM>esempio: </EM>1|or|2-3|(1 or 2 or 3) non validato.<BR>
+      </P>
+      </DIV>
+      <DIV id=div_post-condition style="display: none" >
+      <P class=paragraph>
+  <H4>post-condition</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>definizione di regola|<B>post-condition</B></SPAN><BR>
+        <EM>descrizione: </EM>definisce una post-condizione.<BR>
+        <EM>note:</EM>
+        Vedere <A title="Impara per esempi" href="learnbyexample.html">Impara per esempi</A> per un esempio completo.<BR>
+        Vedere <A title="implies" href="#" onclick="show('div_implies');" >implies</A> per dettagli.
+      </P>
+      </DIV>
+      <DIV id=div_pre-condition style="display: none" >
+      <P class=paragraph>
+  <H4>pre-condition</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>definizione di regola|<B>pre-condition</B></SPAN><BR>
+        <EM>descrizione: </EM>definisce una pre-condizione.<BR>
+        <EM>note:</EM>
+        Vedere <A title="Impara per esempi" href="learnbyexample.html">Impara per esempi</A> per un esempio completo.<BR>
+        Vedere <A title="implies" href="#" onclick="show('div_implies');" >implies</A> per dettagli.
+      </P>
+      </DIV>
+      <DIV id=div_regexp style="display: none" >
+      <P class=paragraph>
+  <H4>regexp</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>regexp</B>|regexpValue</SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; deve corrispondere al pattern &lt;regexpValue&gt;.<BR>
+        <EM>msg default: </EM>REGEXP_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea<BR>
+        <EM>note:</EM> regexpValue deve essere una espressione regolare. Si deve utilizzare '\\' al posto di '\'.<br> Per esempio, .+@.+\\..+$ valida un semplice formato e-mail.<BR>
+      </P>
+      </DIV>
+      <DIV id=div_required style="display: none" >
+      <P class=paragraph>
+  <H4>required</H4>
+        <EM>sintassi: </EM><SPAN class=syntaxreq>fieldName<SPAN class=syntaxopt>:nameDisplayed</SPAN>|<B>required</B></SPAN><SPAN class=syntaxopt>|msg</SPAN><BR>
+        <EM>descrizione: </EM>&lt;fieldName&gt; &egrave; obbligatorio.<BR>
+        <EM>msg default: </EM>REQUIRED_MSG nel file yav-config.js<BR>
+        <EM>applicabile a: </EM>hidden, text, password, textarea, checkbox, select, radio<BR>
+        <EM>note:</EM><BR>
+      </P>
+      </DIV>
+
+      </DIV></DIV>&nbsp;
+      </TD>
+    <TD></TD></TR>
+
+<!-- FOOTER -->
+  <TR>
+    <TD id=footer colSpan=3>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=right>
+            Copyright 2005-2008. All rights reserved.</TD></TR></TBODY>
+      </TABLE>
+  </TD></TR></TABLE>
+</TR></TBODY></TABLE></BODY></HTML>

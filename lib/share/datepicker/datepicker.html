@@ -1,0 +1,56 @@
+<html>
+ <head>
+   <script type="text/javascript" src="/js/prototype.js"></script>
+   <script type="text/javascript" src="/js/scriptaculous.js"></script>
+   <script type="text/javascript" src="/misc/datepicker/datepicker-dev.js"></script>
+ </head>
+ <body>
+  <br /><br />
+  <br /><br />
+  <style type="text/css">
+  @import url("/misc/datepicker/datepicker-dev.css");
+  </style>
+  <div style="text-align: center;">
+
+  <form>
+  <input type="text" id="date-from" name="date-from" />
+  <br/><span style="font-size: x-small;">(click on the input text box)</span>
+  </form>
+  </div>
+  <script type="text/javascript">
+  /*<[CDATA[*/
+  var dpck	= new DatePicker({
+relative	: 'date-from',
+language	: 'lv',
+/*enableCloseEffect : false,*/
+enableShowEffect : false,
+closeEffect	: 'squish'
+/*showEffect	: 'appear'*/
+});
+  dpck.setDateFormat([ "yyyy", "mm", "dd" ], "/");
+/*]]>*/
+</script>
+
+ <br /><br />
+  
+  <form>
+  <input type="text" id="date-from2" name="date-from2" />
+  <br/><span style="font-size: x-small;">(click on the input text box)</span>
+  </div>
+  <script type="text/javascript">
+  /*<[CDATA[*/
+  var dpck2	= new DatePicker({
+relative	: 'date-from2',
+language	: 'nl',
+relativePosition: false,
+externalControl : 'extctrl',
+cellCallback	: function ( t ) { alert(t.readAttribute('id')); }
+});
+/*]]>*/
+</script>
+   <input type="button" value="Position to top=50 left=80" onclick="dpck2.setPosition(50,80); return false;" />
+
+   <span id="extctrl">External control</span>
+  </form>
+ </body>
+</html>

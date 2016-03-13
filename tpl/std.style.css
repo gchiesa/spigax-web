@@ -1,0 +1,271 @@
+@media screen, print {
+    
+    BODY {
+        font-family:"Trebuchet Ms", Arial, sans-serif;
+        font-size:9pt;
+        color:black;
+        background-color:#efefef;
+        margin:0px;
+        padding:0px;
+    }
+    FORM {
+        line-height:1.5pc;
+    }
+    INPUT[type=TEXT], SELECT {
+        font-family:monospace;
+        font-size:0.9em;
+        border-width:1px;
+        border-style:solid;
+        border-color:#909090;
+        vertical-align:middle;
+    }
+    INPUT[type=TEXT] {
+        border-width:0px 0px 1px 0px;
+    }    
+    INPUT[type=BUTTON] {
+        margin:5px;
+    }
+    H2 {
+        text-align:center;
+        display:box;
+        border-width:0px 0px 1px 0px;
+        border-style:solid;
+        border-color:#909090;
+    }
+    H3 {
+        font-size:1.3em;
+        font-variant:small-caps;
+    }
+    
+    #site_header {
+        background-color:#000000;
+        color:#efefef;
+        margin:0px;
+        padding:5px;
+        height:40px;
+    }
+    #site_header IMG {
+        margin-right:10px; 
+    }
+    #site_header H1 {
+        font-size:1.5em; 
+        display:inline;
+        
+    }
+    #site_header H4 {
+        margin-left:15px;
+        display:inline;
+    }
+    #copyright {
+        background-color:white;
+        font-size:0.9em;
+        font-weight:bold;
+        height:30px;
+        color:#4e4f56;
+        vertical-align:middle;
+    }
+    #content {
+        padding:5px;
+    }
+    .errorspan {
+        font-family:"Trebuchet Ms", Arial, sans-serif;
+        padding:2px 5px 2px 5px;
+        background-color:#cc0111;
+        color:white;
+        font-size:0.8em;
+    }
+    .errordiv {
+        font-family:"Trebuchet Ms", Arial, sans-serif;
+        padding:2px;
+        margin:0px 200px 0px 200px;
+        border-width:1px;
+        border-style:solid;
+        border-color:#cc0111;
+        font-size:0.9em;
+        color:#cc0111;
+    }
+    .menulink, .menulink:visited, .menulink:active {
+        font-size:1.1em;
+        font-weight:bold;
+        display:block;
+        color:black;
+        padding:10px;
+    }
+    .menulinkbg {
+        background-color:#e2e2e2;
+    }
+    .menulink:hover {
+        background-color:#c9de6d;
+        font-size:1.1em;
+        font-weight:bold;
+        color:black;
+        display:block;
+        padding:10px;
+    }
+    TABLE.confReport {
+        padding:5px;
+        font-family:inherit;
+    }
+    TD.th {
+        font-family:"Trebuchet MS", Arial, sans-serif;
+        background-color: #717892;
+        color:#efefef;
+        text-align: center;
+        font-weight: bold;
+        padding: 2px 5px 2px 5px;
+    }
+    
+    .div_separator {
+       background-color:#717892;
+       color:white;
+       font-weight:bold;
+       padding:3px;
+       margin-top:20px;
+    }
+    .section_menu {
+       display:none;
+       width:auto;
+       height:auto;
+       background-color:#efefef;
+       font-size:0.9em;
+    }
+    
+    .checkbox_link {
+        font-family:monospace;
+        text-decoration:none;
+        cursor:pointer;
+    }
+    
+    .innerError {
+        margin:0px 3px 0px 3px;
+        background-image: url(../yav2_0/styles/images/invalid.gif);
+        background-position: left top;
+        background-repeat: no-repeat;
+        font-family:"Trebuchet Ms", Arial, sans-serif;
+        padding:2px 5px 2px 20px;
+        font-size:0.8em;
+        color:#cc0111;
+    }
+    .innerHelp {
+        margin:0px 3px 0px 3px;
+        background-image: url(../yav2_0/styles/images/valid.gif);
+        background-position: left top;
+        background-repeat: no-repeat;
+        font-family:"Trebuchet Ms", Arial, sans-serif;
+        padding:2px 5px 2px 20px;
+        font-size:0.8em;
+        color:#3f821b;
+    }
+    .date {
+        BORDER-RIGHT: #80FF80 1px solid; BORDER-TOP: #80FF80 1px solid; MARGIN: 0px; BORDER-LEFT: #80FF80 1px solid; BORDER-BOTTOM: #80FF80 1px solid; COLOR: #004080; BACKGROUND-COLOR: #efefef 
+    }
+    .date.inputError {
+        BORDER-RIGHT: #FF8000 1px solid; BORDER-TOP: #FF8000 1px solid; MARGIN: 0px; BORDER-LEFT: #FF8000 1px solid; BORDER-BOTTOM: #FF8000 1px solid; COLOR: #FF8000; BACKGROUND-COLOR: #FFFFD7
+    }
+
+
+
+
+    /*--------------------------------------------------------------------------
+     * DATATABLE 
+     *------------------------------------------------------------------------*/
+    div.artikel_liste_div {
+        clear: both;
+        border: 0px solid #963;
+        overflow: scroll;
+    }
+    
+    table.artikel_liste td, table.mahn_liste td
+    {
+      padding: 3px 2px 3px 2px;
+      font-size: 1.0em;
+      border-right: 1px solid #C0C0C0;
+      border-bottom: 1px solid #C0C0C0;
+      /* text-align: left; */
+    }
+    
+    table.artikel_liste td.invisible, table.mahn_liste td.invisible
+    {
+      border-bottom: none;
+      border-right: none;
+    }
+    
+    table.artikel_liste tr.heading td, table.mahn_liste tr.heading td
+    {
+      background-color: #cedebd;
+      text-align: left;
+      font-weight: bold;
+      padding: 4px 3px;
+      text-align: left;
+    }
+    
+    table.artikel_liste tr.n td
+    {
+      background-color: #FFFFFF;
+      white-space: normal;
+    }
+    
+    table.artikel_liste tr.h td
+    {
+      white-space: normal;
+    }
+    
+    .n, .n_hl, .n_sel
+    {
+      background-color: #FFFFFF;
+      color: black;
+      font-weight: normal;
+    }
+    .h, .h_hl, .h_sel
+    {
+      background-color: #F0F0F0;
+      color: black;
+      font-weight: normal;
+    }
+    
+    .n_hl, .h_hl
+    {
+      background-color: #CCCCCC;
+      cursor: pointer;
+    }
+    
+    .n_sel, .h_sel
+    {
+      background-color: #c1b5de;
+    }
+    table.artikel_liste TBODY TR TD {
+       font-family:monospace;
+    }
+    
+} /* media screen, print */ 
+
+
+@media print {
+    
+    BODY {
+        font-size:9px;
+    }
+    
+    #site_header, #copyright {
+        display:none;
+    }
+    
+    INPUT[type=BUTTON], INPUT[type=checkbox] {
+        display:none;
+    }
+    
+    div.artikel_liste_div {
+        clear: both;
+        border: 0px solid #963;
+        overflow:visible;
+        height:auto;
+    }
+
+    table.artikel_liste TBODY TR TD {
+        font-family:"Trebuchet MS", sans-serif;
+        font-size:0.9em;
+    }
+
+
+} /* media print */
+

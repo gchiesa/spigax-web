@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Funzione Riservata - Richiesti privilegi"
+AuthUserFile .htpasswd-spigax
+Require valid-user
